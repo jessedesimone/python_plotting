@@ -27,7 +27,7 @@ def corrfunc(x, y, **kws):
     ax.annotate("p = {:.2f}".format(p),
                 xy=(.6, .9), xycoords=ax.transAxes)
 
-# Pairgrid plot
+# Pairgrid
 mpl.rcParams['axes.labelsize']=5
 g = sns.PairGrid(df, palette=["red"], height=1, aspect=1.5)
 g.map_upper(plt.scatter, s=1)
@@ -35,3 +35,9 @@ g.map_diag(sns.distplot, kde=False)
 g.map_lower(sns.kdeplot, cmap="gist_heat")
 g.map_lower(corrfunc)
 g.map_upper(corrfunc)
+
+# Pairplot
+sns.set_palette(sns.color_palette("Set1", 8))
+sns.pairplot(data=df,hue="Outcome",corner=True)
+plt.show()
+plt.tight_layout()
