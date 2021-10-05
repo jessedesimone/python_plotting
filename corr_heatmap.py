@@ -13,7 +13,7 @@ import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("/Users/jessedesimone/DeSimone_Github/python_stats/Datasets/diabetes.csv")
+df = pd.read_csv("<path/to/file>")
 
 sns.set_palette(sns.color_palette("Set1", 8))
 plt.figure(figsize=(15,7))

@@ -16,7 +16,7 @@ import seaborn as sns
 import matplotlib as mpl
 from scipy import stats
 
-df = pd.read_csv("/Users/jessedesimone/DeSimone_Github/python_stats/Datasets/diabetes.csv")
+df = pd.read_csv("<path/to/file>")
 
 # define correlation function (spearman or pearson)
 def corrfunc(x, y, **kws):
