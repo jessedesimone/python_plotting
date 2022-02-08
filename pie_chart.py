@@ -25,10 +25,4 @@ fig, ax1 = plt.subplots(figsize=(5,5))
 ax1.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=False, startangle=90)
 ax1.set_title('Investment Weight Targets', fontdict=fontdict, bbox=bbox)
 plt.tight_layout()
-
-# Plot Pie Chart Option 2
-plt.pie(sizes, labels=labels)
-plt.title('Investment Weight Targets', fontdict=fontdict, bbox=bbox)
-plt.legend()
-plt.tight_layout()
 plt.show()
