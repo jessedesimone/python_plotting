@@ -18,7 +18,7 @@ plt.style.use('fivethirtyeight')
 
 # Define Labels and Sizes
 labels = ['Large Cap', 'Mid Cap', 'Small Cap', 'Bond', 'Choice']
-sizes = np.array([55, 25, 10, 7, 3])
+sizes = np.array([55, 25, 10, 5, 5])
 
 # Plot Pie Chart Option 1
 fig, ax1 = plt.subplots(figsize=(5,5))
