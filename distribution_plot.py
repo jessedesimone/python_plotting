@@ -1,19 +1,8 @@
-#!/usr/local/bin/python3.9
-"""
-Source:https://www.kaggle.com/yogidsba/diabetes-prediction-eda-model
-
-Change Log
-=============
-0.0.1 (2021-10-04)
--------------
-Initial commit
-
-"""
-data = pd.read_csv("<path/to/file>")
-
 def dist_box(data):
- # function plots a combined graph for univariate analysis of continous variable
- #to check spread, central tendency , dispersion and outliers
+'''
+Code will perform univariate analysis for all continuous variables in dataframe.
+For each variable, creates plot with spread, central tendency , dispersion and outliers.
+'''
     Name=data.name.upper()
     fig,(ax_box,ax_dis)  =plt.subplots(nrows=2,sharex=True,gridspec_kw = {"height_ratios": (.25, .75)},figsize=(8, 5))
     mean=data.mean()
