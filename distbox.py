@@ -1,5 +1,9 @@
 #!/usr/local/bin/python3.9
 
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 infile='path/to/infile.csv'
 df=pd.read_csv(infile)
 
@@ -60,12 +64,6 @@ def dist_box(data):
     plt.legend({'Mean':mean,'Median':median})
 
 list_col = df.select_dtypes(include='number').columns.to_list()
-list_col.remove('sex')
-list_col.remove('apoe')
-list_col.remove('ab42_40')
-list_col.remove('suvr')
-list_col.remove('CDRSUM')
-list_col.remove('MOCATOTS')
-list_col.remove('MMSE_C_TOTAL')
+#list_col.remove('<column name>')
 for i in range(len(list_col)):
     dist_box(df[list_col[i]])
