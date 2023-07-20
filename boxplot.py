@@ -32,10 +32,12 @@ order = ['<x var 1>','x var 2','x var 3']     #define order of x variables
 pairs=[('<x var 1>','<x var 2>'), ('<x var 1>','<x var 3>'),('<x var 2>','<x var 3>')]      #define pairs of comparisons
 my_cols = {'<x var 1>': 'blue', '<x var 2>': 'orange', '<x var 3>': 'red'}      #define colors for x groups
 ax = sns.boxplot(data=df, x=x, y=y, order=order, notch=False, 
-                 palette=my_cols, fliersize = 2,
-                 flierprops={"marker": "o"}, 
+                 palette=my_cols, fliersize = 5,
+                 flierprops={"marker": "o", 'markerfacecolor':'black', 'markeredgecolor':'black'}, 
                  medianprops={"color": "black"}, 
-                 boxprops = {'edgecolor': 'black', 'linewidth': 2})
+                 boxprops = {'edgecolor': 'black', 'linewidth': 1},
+                 whiskerprops = {"color": "black"},
+                 capprops = {"color": "blue"})
 #ax2=sns.stripplot(data=df, x=x, y=y, order=order, color='black')   #add stripplot
 ax.set_xticklabels(['<x var 1>', '<x var 1>', '<x var 1>'])     #define x tick names
 sns.despine()
