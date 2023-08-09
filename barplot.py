@@ -21,7 +21,7 @@ df = pd.read_csv(infile)
 dff = df.sort_values(by='difference', ascending=True)
 dff
 
-fig, ax = plt.subplots(figsize=(6,15), dpi=80)       #create the figure and axes objects, specify the size and the dots per inches 
+fig, ax = plt.subplots(figsize=(6,12), dpi=80)       #create the figure and axes objects, specify the size and the dots per inches 
 bar1 = ax.barh(dff['variable'], dff['difference'], color='red')      #plot bars
 # Reformat x-axis label and tick labels
 ax.set_xlabel('', fontsize=12, labelpad=10) # No need for an axis label
@@ -38,9 +38,9 @@ plt.ylim(-1,96)
 ax.yaxis.set_tick_params(pad=2, labelbottom=True, labelsize=8, labelrotation=0)
 # Add in title and subtitle
 ax.text(x=0.05, y=.94, s="Grey Matter Free-Water", transform=fig.transFigure, ha='left', fontsize=12, weight='bold', alpha=1)
-ax.text(x=0.05, y=.925, s="Aβ plasma+/PET- versus Aβ plasma-/PET- difference", transform=fig.transFigure, ha='left', fontsize=10, alpha=1)
+ax.text(x=0.05, y=.925, s="Aβ plasma+/PET+ versus Aβ plasma+/PET- difference", transform=fig.transFigure, ha='left', fontsize=10, alpha=1)
 plt.tight_layout()
-plt.savefig('/Users/jessedesimone/Desktop/fig1.jpg', dpi=300)
+#plt.savefig('/Users/jessedesimone/Desktop/fig1.jpg', dpi=300)
 plt.show()
 
 
