@@ -21,7 +21,9 @@ df = pd.read_csv(infile)
 dff = df.sort_values(by='difference', ascending=True)
 dff
 
-fig, ax = plt.subplots(figsize=(6,12), dpi=80)       #create the figure and axes objects, specify the size and the dots per inches 
+plt.style.use('/Users/jessedesimone/env/lib/python3.9/site-packages/matplotlib/mpl-data/stylelib/seaborn-talk.mplstyle')
+plt.style.use('/Users/jessedesimone/DeSimone_Github/python_plotting/desimone.mplstyle')
+fig, ax = plt.subplots(figsize=(6,12), dpi=300)       #create the figure and axes objects, specify the size and the dots per inches 
 bar1 = ax.barh(dff['variable'], dff['difference'], color='red')      #plot bars
 # Reformat x-axis label and tick labels
 ax.set_xlabel('', fontsize=12, labelpad=10) # No need for an axis label
