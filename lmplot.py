@@ -22,18 +22,44 @@ plt.ylabel('')
 plt.tight_layout()
 plt.show()
 
-#--------use desimone.mplstype-------
+#--------use specific rcParams-------
 
 import os
 import matplotlib.pyplot as plt
-os.chdir('/set/root/directory')
-df=pd.read_csv('input_file.csv')
-sns.set_context("talk")
-plt.style.use('desimone.mplstyle')
-x=''
-y=''
+import seaborn as sns
+ex={
+    'axes.titlesize' : 24,
+    'axes.titleweight':   'bold',
+    'axes.labelsize' : 24,
+    'axes.labelweight': 'bold',
+    'xtick.labelsize' : 18,
+    'ytick.labelsize' : 18,
+    'axes.spines.left':   True,
+    'axes.spines.bottom': True,
+    'axes.spines.top':    False,
+    'axes.spines.right':  False,
+    'lines.linewidth': 2.275,
+    'xtick.major.width': 1.3,
+    'ytick.major.width': 1.3,
+    'xtick.minor.width': 0.65,
+    'ytick.minor.width': 0.65,
+    'grid.linewidth': 1.8,
+    'lines.linewidth': 2.275,
+    'patch.linewidth': 1,
+    'lines.markersize': 9.1,
+    'lines.markeredgewidth': 0,
+    'xtick.major.pad': 9.1,
+    'ytick.major.pad': 9.1,
+    'ytick.left': True,
+    'font.family': ['sans-serif'],
+    'font.sans-serif': ['Arial'],
+    'xtick.bottom': True
+} 
+sns.set_theme(context='talk', style='white', rc=ex)
+x='ab42_40'
+y='composite_gm_fw'
 
-my_cols = {'grp1': 'cyan', 'grp2': 'steelblue', 'grp3': 'lightslategrey'}
+my_cols = {'plasma-/PET-': 'cyan', 'plasma+/PET-': 'steelblue', 'plasma+/PET+': 'lightslategrey'}
 g = sns.lmplot(x=x, y=y, hue='grp', data=df, fit_reg=False, legend=False,
                palette=my_cols, scatter_kws={"s": 100, 'linewidths':1,'edgecolor':'black'})
 g=sns.regplot(x=x, y=y, data=df, scatter=False, ax=g.axes[0, 0], line_kws={"color": "black"})
@@ -41,5 +67,6 @@ plt.axvline(x=0.160, color='black', linestyle = 'dashed')       #plot vertical l
 plt.xlabel('')
 plt.ylabel('')
 plt.tight_layout()
-plt.savefig('out_file.jpg', dpi=300, bbox_inches='tight')
+#plt.savefig('out_file.jpg', dpi=300, bbox_inches='tight')
 plt.show()
+
