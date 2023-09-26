@@ -17,6 +17,7 @@ file = 'test.csv'
 infile = os.path.join(path_to_file,file)
 df = pd.read_csv(infile)
 
+#--------------Option 1 - Matplotlib-------------
 #sort values
 dff = df.sort_values(by='difference', ascending=True)
 dff
@@ -45,6 +46,17 @@ plt.tight_layout()
 #plt.savefig('/Users/jessedesimone/Desktop/fig1.jpg', dpi=300)
 plt.show()
 
+#--------------Option 1 - Seaborn-------------
+import seaborn as sns
+sns.barplot(data=df, x='', y='', palette='dark', 
+            capsize=.4, errcolor=".5",
+            linewidth=3, edgecolor=".5")
+sns.despine()
+plt.ylabel('', fontweight='bold')       #set ylabel name
+plt.xlabel('')      #set xlabel name
+plt.tight_layout()
+plt.savefig('')
+plt.show()
 
 
 
